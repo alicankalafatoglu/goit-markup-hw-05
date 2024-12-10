@@ -525,6 +525,44 @@ a {
 }
 
 /* MODAL WINDOW*/
+
+/* Label stili */
+.modal-window-checkbox-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+/* Span stili */
+.modal-window-checkbox-span {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+}
+
+/* Span için checkbox durumuna göre stil */
+.modal-window-checkbox-input:checked+.modal-window-checkbox-span {
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
+}
+
+/* A etiketi stili */
+.modal-window-checkbox-link {
+    color: #4d5ae5;
+    text-decoration: underline;
+    /* Opsiyonel: altını çizmek için */
+}
+
 .modal-window-container {
     position: fixed;
     top: 0;
