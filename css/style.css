@@ -713,3 +713,25 @@ a {
     border: none;
     fill: #f4f4fd;
 }
+
+.modal-window-checkbox-link {
+    text-decoration: underline;
+}
+
+.modal-window-checkbox-div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Kutucuk ve yazı arasında boşluk */
+}
+
+.modal-window-checkbox-span {
+    display: flex;
+    /* SVG simgesini hizalı tutmak için */
+    align-items: center;
+}
+
+.modal-window-checkbox-label {
+    margin: 0;
+    /* Varsayılan boşlukları sıfırlamak için */
+}
