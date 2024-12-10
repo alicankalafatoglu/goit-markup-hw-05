@@ -526,41 +526,15 @@ a {
 
 /* MODAL WINDOW*/
 
-/* Label stili */
-.modal-window-checkbox-label {
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: #8e8f99;
-}
+/* MODAL WINDOW */
 
-/* Span stili */
-.modal-window-checkbox-span {
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 2px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    fill: transparent;
-}
-
-/* Span için checkbox durumuna göre stil */
-.modal-window-checkbox-input:checked+.modal-window-checkbox-span {
-    background-color: #404bbf;
-    border: none;
-    fill: #F4F4FD;
-}
-
-/* A etiketi stili */
-.modal-window-checkbox-link {
-    color: #4d5ae5;
-    text-decoration: underline;
-    /* Opsiyonel: altını çizmek için */
+:root {
+    --color-primary: #4d5ae5;
+    --color-secondary: #404bbf;
+    --color-bg-light: #fcfcfc;
+    --color-text-dark: #2e2f42;
+    --color-text-light: #8e8f99;
+    --transition-default: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-window-container {
@@ -570,8 +544,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--transition-default), visibility var(--transition-default);
 }
 
 .modal-window {
@@ -581,13 +554,11 @@ a {
     transform: translate(-50%, -50%);
     width: 408px;
     min-height: 584px;
-    background-color: #fcfcfc;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
-                0px 1px 3px rgba(0, 0, 0, 0.12),
-                0px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-bg-light);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 72px 24px 24px 24px;
+    padding: 72px 24px 24px;
+    transition: transform var(--transition-default);
 }
 
 .modal-window-button {
@@ -599,27 +570,21 @@ a {
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     background-color: #e7e9fc;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition-default), border var(--transition-default);
 }
 
 .modal-window-button:hover,
 .modal-window-button:focus {
-    background-color: #404bbf;
+    background-color: var(--color-secondary);
     border: none;
 }
 
-.modal-window-svg {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-window .modal-window-button:hover,
-.modal-window .modal-window-button:focus {
+.modal-window-button:hover .modal-window-svg,
+.modal-window-button:focus .modal-window-svg {
     fill: #ffffff;
 }
 
@@ -629,25 +594,18 @@ a {
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
-    color: #2e2f42;
+    color: var(--color-text-dark);
     margin-bottom: 16px;
 }
 
-.modal-window-form-div {
-    margin-bottom: 8px;
-}
-
+/* Form Elementleri */
 .modal-window-form-label {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: #8e8f99;
+    color: var(--color-text-light);
     display: block;
     margin-bottom: 4px;
-}
-
-.modal-window-input-symbol-div {
-    position: relative;    
 }
 
 .modal-window-form-input {
@@ -657,12 +615,12 @@ a {
     border-radius: 4px;
     background-color: transparent;
     padding-left: 38px;
-    outline: transparent;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    transition: border-color var(--transition-default);
 }
 
 .modal-window-form-input:focus {
-    border: 1px solid #4d5ae5;
+    border-color: var(--color-primary);
 }
 
 .modal-window-form-svg {
@@ -670,15 +628,11 @@ a {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill var(--transition-default);
 }
 
-.modal-window-form-input:focus + .modal-window-form-svg {
-    fill: #4d5ae5;
-}
-
-.modal-window-form-comment-div {
-    margin-bottom: 16px;
+.modal-window-form-input:focus+.modal-window-form-svg {
+    fill: var(--color-primary);
 }
 
 .modal-window-form-textarea {
@@ -692,24 +646,21 @@ a {
     border-radius: 4px;
     background-color: transparent;
     padding: 8px 16px;
-    outline: transparent;
+    outline: none;
     resize: none;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--transition-default);
 }
 
 .modal-window-form-textarea:focus {
-    border-color: #4d5ae5;
+    border-color: var(--color-primary);
 }
 
+/* Checkbox Elementleri */
 .modal-window-checkbox-div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 24px;
-}
-
-.modal-window-checkbox-label {
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: #8e8f99;    
 }
 
 .modal-window-checkbox-span {
@@ -717,18 +668,32 @@ a {
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    fill: transparent;}
-
-.modal-window-checkbox-link {
-    color: #4d5ae5;
+    fill: transparent;
+    transition: background-color var(--transition-default), border var(--transition-default), fill var(--transition-default);
 }
 
+.modal-window-checkbox-input:checked+.modal-window-checkbox-span {
+    background-color: var(--color-secondary);
+    border: none;
+    fill: #f4f4fd;
+}
+
+.modal-window-checkbox-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--color-text-light);
+}
+
+.modal-window-checkbox-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Form Button */
 .modal-window-form-button {
     display: block;
     min-width: 169px;
@@ -740,36 +705,68 @@ a {
     letter-spacing: 0.04em;
     color: #ffffff;
     cursor: pointer;
-    background-color: #4d5ae5;
-    border: none;    
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin: auto;  
-}
-
-.modal-window-checkbox-input:checked + .modal-window-checkbox-label .modal-window-checkbox-span {
-    background-color: #404bbf;
+    background-color: var(--color-primary);
     border: none;
-    fill: #f4f4fd;
+    transition: background-color var(--transition-default);
+    margin: auto;
+}
+/* Form Grupları */
+.modal-window-form-group {
+    position: relative;
+    margin-bottom: 16px;
 }
 
-.modal-window-checkbox-link {
-    text-decoration: underline;
+.modal-window-form-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 40px;
+    /* İkon için yer açma */
+    outline: none;
+    transition: border-color var(--transition-default);
 }
 
-.modal-window-checkbox-div {
+.modal-window-form-input:focus {
+    border-color: var(--color-primary);
+}
+
+.modal-window-form-svg {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: rgba(46, 47, 66, 0.4);
+    transition: fill var(--transition-default);
+}
+
+.modal-window-form-input:focus~.modal-window-form-svg {
+    fill: var(--color-primary);
+}
+
+/* Giriş Alanı ve İkon Kapsayıcısı */
+.modal-window-input-symbol-div {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 8px;
-    /* Kutucuk ve yazı arasında boşluk */
 }
 
-.modal-window-checkbox-span {
-    display: flex;
-    /* SVG simgesini hizalı tutmak için */
-    align-items: center;
+.modal-window-form-input {
+    width: 100%;
+    padding-left: 38px;
+    /* İkon için boşluk */
 }
 
-.modal-window-checkbox-label {
-    margin: 0;
-    /* Varsayılan boşlukları sıfırlamak için */
+.modal-window-form-svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: rgba(46, 47, 66, 0.4);
+    transition: fill var(--transition-default);
+}
+
+.modal-window-form-input:focus~.modal-window-form-svg {
+    fill: var(--color-primary);
 }
